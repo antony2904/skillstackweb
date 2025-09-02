@@ -1,0 +1,242 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #0a0a0a;
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: #111;
+    position: sticky;
+    top: 0;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+.navbar nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+.navbar nav a:hover {
+    color: #4facfe;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: black;
+}
+.hero h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+.hero p {
+    font-size: 18px;
+}
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: black;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+.btn:hover {
+    background: #4facfe;
+    color: black;
+}
+
+/* Sections */
+.section {
+    padding: 80px 50px;
+    text-align: center;
+}
+.section h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #4facfe;
+}
+
+/* Services */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+.card {
+    background: #111;
+    padding: 30px;
+    border-radius: 12px;
+    width: 280px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    transition: 0.3s;
+}
+.card:hover {
+    transform: scale(1.07);
+    box-shadow: 0 10px 25px rgba(255,255,255,0.1);
+}
+.service-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #4facfe;
+}
+
+/* Portfolio */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.portfolio-item {
+    background: #111;
+    padding: 30px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+.portfolio-item:hover {
+    transform: scale(1.05);
+    background: #222;
+}
+
+/* Contact */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: auto;
+}
+form input, form textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+form button {
+    background: #4facfe;
+    color: black;
+    font-weight: bold;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+form button:hover {
+    background: #00f2fe;
+}
+
+/* Footer */
+footer {
+    background: #111;
+    padding: 20px;
+    text-align: center;
+}
+.socials a {
+    margin: 0 10px;
+    color: white;
+    font-size: 20px;
+}
+.socials a:hover {
+    color: #4facfe;
+}
+
+
+/* Chatbot Toggle Button */
+#chatbot-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #000;
+  color: #fff;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 9999;
+  transition: 0.3s;
+}
+#chatbot-toggle:hover {
+  background: #333;
+}
+
+/* Chatbox */
+.chatbox {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 320px;
+  background: #fff;
+  border-radius: 10px;
+  border: 2px solid #000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  animation: popup 0.3s ease;
+}
+@keyframes popup {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Header */
+#chat-header {
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Messages */
+.chat-messages {
+  height: 220px;
+  overflow-y: auto;
+  font-size: 14px;
+  padding: 10px;
+}
+
+/* Input */
+.chat-input-box {
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+.chat-input-box input {
+  flex: 1;
+  border: none;
+  padding: 8px;
+}
+.chat-input-box button {
+  width: 70px;
+  background: #000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.chat-input-box button:hover {
+  background: #333;
+}

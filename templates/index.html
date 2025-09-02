@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillStack - IT Solutions & Projects</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="SkillStack Logo">
+            <h1>SkillStack</h1>
+        </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Projects</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h2>Stack Your Skills, Build Your Future 🚀</h2>
+        <p>We deliver student-friendly projects and professional IT solutions for businesses.</p>
+        <a href="#services" class="btn">Explore Services</a>
+
+    </section>
+
+
+
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <h2>Our Services</h2>
+        <div class="cards">
+            <div class="card">
+                <i class="fas fa-graduation-cap service-icon"></i>
+                <h3>Mini Projects</h3>
+                <p>Student projects with source code, ready to customize & learn.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-laptop-code service-icon"></i>
+                <h3>Web Development</h3>
+                <p>Modern, responsive websites for startups, shops & businesses.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-cogs service-icon"></i>
+                <h3>IT Solutions</h3>
+                <p>Custom apps & automation tools designed for real-world needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+        <h2>Our Projects</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">Student Management System</div>
+            <div class="portfolio-item">E-commerce Website</div>
+            <div class="portfolio-item">AI Chatbot</div>
+            <div class="portfolio-item">Portfolio Website</div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <h2>About Us</h2>
+        <p>
+            SkillStack is a student-driven IT startup focused on <b>projects, IT solutions, and web development</b>.
+            We aim to help students gain hands-on skills while providing professional services to businesses.
+        </p>
+        <p>We are a growing IT startup dedicated to helping students, professionals, and aspiring developers turn their ideas into reality. Our focus is on delivering high-quality mini projects, college projects, and customized portfolio works that showcase creativity, technical expertise, and practical problem-solving.
+
+We understand the challenges students face when working on academic or personal projects, so we provide end-to-end support—from concept development to execution. Our team ensures that every project is unique, innovative, and aligned with industry standards, helping students not only complete their coursework but also stand out in their careers.
+
+In addition to student projects, we also create professional portfolios that highlight skills, achievements, and talents in the most impactful way. With a commitment to excellence and innovation, we aim to be the trusted partner for students and young professionals looking to make their mark in the tech world.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <h2>Contact Us</h2>
+       <form method="POST" action="/">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+       </form>
+
+
+    <!-- Footer -->
+        <footer class="bg-dark text-white text-center py-4">
+              <p>© 2025 SkillStack | All Rights Reserved</p>
+
+              <div class="socials mt-3">
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/_skill_stack_?igsh=YWxlcjRrZXZ0bW4x" target="_blank" class="text-white mx-3 fs-4">
+                  <i class="fab fa-instagram"></i>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/" target="_blank" class="text-white mx-3 fs-4">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+
+                <!-- Gmail -->
+                   <a href="https://mail.google.com/mail/?view=cm&fs=1&to=skillstackofficialinfo@gmail.com" target="_blank" class="text-white mx-3 fs-4">
+                       <i class="fas fa-envelope"></i>
+                   </a>
+              </div>
+        </footer>
+
+        <!-- Floating Chat Icon -->
+        <div id="chat-icon">💬</div>
+
+        <!-- Chatbot Widget -->
+        <div id="chatbot-container" style="display: none;">
+          <div id="chat-header">
+            💬 SkillStack AI Assistant
+            <span id="close-btn">✖</span>
+          </div>
+          <div id="chat-box"></div>
+          <div id="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Ask me about coding errors..." />
+            <button id="send-btn">Send</button>
+          </div>
+        </div>
+
+        <style>
+          /* Floating Chat Icon */
+          #chat-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #0078ff;
+            color: white;
+            font-size: 24px;
+            padding: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+          }
+
+          /* Floating Chatbot Styles */
+          #chatbot-container {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 320px;
+            height: 400px;
+            background: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            color: white;
+            z-index: 1000;
+          }
+          #chat-header {
+            background: #111;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            position: relative;
+          }
+          #close-btn {
+            position: absolute;
+            right: 10px;
+            top: 8px;
+            cursor: pointer;
+            color: #aaa;
+          }
+          #close-btn:hover {
+            color: #fff;
+          }
+          #chat-box {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            background: #222;
+          }
+          .msg {
+            margin: 5px 0;
+            padding: 8px;
+            border-radius: 6px;
+            max-width: 80%;
+            word-wrap: break-word;
+          }
+          .user-msg {
+            background: #0078ff;
+            align-self: flex-end;
+            text-align: right;
+          }
+          .bot-msg {
+            background: #444;
+            align-self: flex-start;
+          }
+          #chat-input-area {
+            display: flex;
+            border-top: 1px solid #333;
+          }
+          #chat-input {
+            flex: 1;
+            padding: 8px;
+            border: none;
+            outline: none;
+            background: #333;
+            color: white;
+          }
+          #send-btn {
+            background: #0078ff;
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            cursor: pointer;
+          }
+        </style>
+
+        <script>
+          const chatIcon = document.getElementById("chat-icon");
+          const chatContainer = document.getElementById("chatbot-container");
+          const closeBtn = document.getElementById("close-btn");
+          const chatBox = document.getElementById("chat-box");
+          const chatInput = document.getElementById("chat-input");
+          const sendBtn = document.getElementById("send-btn");
+
+          // Open chatbot
+          chatIcon.addEventListener("click", () => {
+            chatContainer.style.display = "flex";
+            chatIcon.style.display = "none";
+          });
+
+          // Close chatbot
+          closeBtn.addEventListener("click", () => {
+            chatContainer.style.display = "none";
+            chatIcon.style.display = "block";
+          });
+
+          function appendMessage(content, className) {
+            const msg = document.createElement("div");
+            msg.className = "msg " + className;
+            msg.textContent = content;
+            chatBox.appendChild(msg);
+            chatBox.scrollTop = chatBox.scrollHeight;
+          }
+
+          async function sendMessage() {
+            const userMsg = chatInput.value.trim();
+            if (!userMsg) return;
+
+            appendMessage(userMsg, "user-msg");
+            chatInput.value = "";
+
+            // Send to Flask backend
+            const res = await fetch("/chat", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ message: userMsg })
+            });
+
+            const data = await res.json();
+            appendMessage(data.reply, "bot-msg");
+          }
+
+          sendBtn.addEventListener("click", sendMessage);
+          chatInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") sendMessage();
+          });
+        </script>
+
+
+</body>
+</html>
